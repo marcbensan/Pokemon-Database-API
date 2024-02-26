@@ -1,5 +1,4 @@
 const express = require("express");
-const data = require("./data.json"); // Importing data.json directly
 const path = require("path");
 const fs = require("fs");
 
