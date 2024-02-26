@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1f1b1b;
+  color: #ddd;
+}
+
+main {
+  max-width: 1600px;
+  margin: 30px auto;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.queries {
+  display: flex;
+  justify-content: center;
+}
+
+.allPokemons,
+.individual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 30px;
+}
+
+#pokemonId {
+  width: 75%;
+}
+
+.pokemons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  align-items: center;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+  display: inline-flex;
+  height: 20px;
+  justify-content: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  font-size: 9px;
+  margin-top: 10px;
+}
+
+label {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.queryAll {
+  margin-top: 20px;
+}

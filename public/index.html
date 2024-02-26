@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Database</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="queries">
+      <div class="allPokemons">
+        <h1>All Pokemons</h1>
+        <button type="button" class="queryAll">See all Pokemons</button>
+      </div>
+      <div class="individual">
+        <h1>Select a Pokemon</h1>
+
+        <label for="pokemonId">Enter a Pokemon ID</label>
+        <input
+          type="number"
+          id="pokemonId"
+          name="pokemonId"
+          placeholder="Between 1 and 10"
+        />
+        <button id="submitPokemon">Search</button>
+      </div>
+    </div>
+    <div class="pokemons"></div>
+  </body>
+  <script>
+    function queryAllPokemons(pokemonId) {
+      // Check if the parameter sent is in valid range
+      if (pokemonId < 1 || pokemonId > 10) {
+        const pokemon = document.querySelector(".pokemons");
+        pokemon.innerHTML = "Pokemon ID must be between 1 and 10!";
+        return;
+      }
+
+      // Pass the appropriate route depending if an argument is sent
+      const apiUrl =
+        pokemonId > 0
+          ? `http://localhost:8080/api/data/${pokemonId}` // Send this url if an ID is specified
+          : "http://localhost:8080/api/data";
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((json) => {
+          displayPokemons(json);
+        })
+        .catch((error) => {
+          console.error("Error fetching Pokemons:", error);
+        });
+    }
+
+    function displayPokemons(data) {
+      const pokemon = document.querySelector(".pokemons");
+      pokemon.innerHTML = "";
+
+      // Validate if the data being passed is an array
+      if (Array.isArray(data)) {
+        const pokemonList = document.createElement("ol");
+        data.forEach((pokemon) => {
+          const list = document.createElement("li");
+          list.innerHTML = `${pokemon.name} • ${pokemon.type} • ${pokemon.specialMove} • ${pokemon.habitat}`;
+          pokemonList.appendChild(list);
+        });
+        pokemon.appendChild(pokemonList);
+      } else {
+        // Data is only 1 object
+        const pokemonSelected = document.createElement("p");
+        pokemonSelected.innerHTML = `${data.name} • ${data.type} • ${data.specialMove} • ${data.habitat}`;
+        pokemon.appendChild(pokemonSelected);
+      }
+    }
+
+    // Returns a list of all Pokemons
+    document
+      .querySelector(".queryAll")
+      .addEventListener("click", queryAllPokemons);
+
+    // Returning the Pokemon corresponding to the ID the user entered
+    document.getElementById("submitPokemon").addEventListener("click", (e) => {
+      e.preventDefault();
+      queryAllPokemons(document.getElementById("pokemonId").value);
+    });
+  </script>
+</html>

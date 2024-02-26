@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Snorlax",
+        "type": "Normal",
+        "specialMove": "Rest",
+        "habitat": "Mountain"
+    },
+    {
+        "id": 2,
+        "name": "Mewtwo",
+        "type": "Psychic",
+        "specialMove": "Psystrike",
+        "habitat": "Cave"
+    },
+    {
+        "id": 3,
+        "name": "Gyarados",
+        "type": "Water/Flying",
+        "specialMove": "Hydro Pump",
+        "habitat": "Sea"
+    },
+    {
+        "id": 4,
+        "name": "Dragonite",
+        "type": "Dragon/Flying",
+        "specialMove": "Dragon Claw",
+        "habitat": "Sky"
+    },
+    {
+        "id": 5,
+        "name": "Machamp",
+        "type": "Fighting",
+        "specialMove": "Dynamic Punch",
+        "habitat": "Plains"
+    },
+    {
+        "id": 6,
+        "name": "Alakazam",
+        "type": "Psychic",
+        "specialMove": "Psybeam",
+        "habitat": "Forest"
+    },
+    {
+        "id": 7,
+        "name": "Gengar",
+        "type": "Ghost/Poison",
+        "specialMove": "Shadow Ball",
+        "habitat": "Graveyard"
+    },
+    {
+        "id": 8,
+        "name": "Arcanine",
+        "type": "Fire",
+        "specialMove": "Flare Blitz",
+        "habitat": "Volcano"
+    },
+    {
+        "id": 9,
+        "name": "Lapras",
+        "type": "Water/Ice",
+        "specialMove": "Ice Beam",
+        "habitat": "Arctic Ocean"
+    },
+    {
+        "id": 10,
+        "name": "Golem",
+        "type": "Rock/Ground",
+        "specialMove": "Earthquake",
+        "habitat": "Mountains"
+    }
+]
